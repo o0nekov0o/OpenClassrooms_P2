@@ -4,7 +4,8 @@ index_url = 'http://books.toscrape.com/catalogue/category/books/sequential-art_5
 
 def save_one_category(index_url):
     """
-    Save all books of a category (it handles pagination)
+    Save all data of the books
+    of the entire category (it handles pagination)
     """
     suivant = 1 # permettra de relancer la boucle
     url = index_url # preserve global var

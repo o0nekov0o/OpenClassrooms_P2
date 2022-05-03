@@ -1,7 +1,6 @@
 def save_image_file(url_image):
     """
-    :param url_image:
-    :return:
+    Save the image of the book
     """
     if os.path.isdir('scraping_images') == False: # si le dossier n'existe pas
         os.makedirs('scraping_images') # alors procéder à sa création
