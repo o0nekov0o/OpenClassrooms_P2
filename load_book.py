@@ -1,6 +1,10 @@
 from extract_book import *
 
 def save_book_csv(book_data):
+    """
+    :param book_data:
+    :return:
+    """
     file_exists = os.path.isfile(f"scraping_{list(book_data.values())[7].replace(' ','_')}.csv") # permettra verifier si csv existe
     file = open(f"scraping_{list(book_data.values())[7].replace(' ','_')}.csv", 'a', encoding='utf-8') # retour get_book_data, value index 7, cat name
     headers = list(book_data) # retourne clés book_data dans liste pour headers

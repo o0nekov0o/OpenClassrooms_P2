@@ -1,6 +1,7 @@
 from load_book import *
 
 index_url = 'http://books.toscrape.com/catalogue/category/books/sequential-art_5/index.html' # global var
+
 def save_one_category(index_url):
     """
     Save all books of a category (it handles pagination)

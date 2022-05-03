@@ -1,7 +1,12 @@
 from save_image import *
 
 EXAMPLE_URL = 'http://books.toscrape.com/catalogue/a-light-in-the-attic_1000/index.html' # global var
+
 def get_book_data(EXAMPLE_URL):
+    """
+    :param EXAMPLE_URL:
+    :return:
+    """
     response = requests.get(EXAMPLE_URL)  # 200 si ok
     print(response)  # affichage code retour
     if response.ok:  # si justement ok

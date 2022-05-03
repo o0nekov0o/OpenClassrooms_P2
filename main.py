@@ -1,7 +1,12 @@
 from category import *
 
 site_url = 'http://books.toscrape.com/index.html' # global var
+
 def save_all_categories(site_url):
+    """
+    :param site_url:
+    :return:
+    """
     curl = site_url # preserve global var
     response = requests.get(curl)  # 200 si ok
     print(response)  # afficher code retour
