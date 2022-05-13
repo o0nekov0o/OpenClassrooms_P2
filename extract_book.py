@@ -1,4 +1,4 @@
-from save_image import *
+from . import save_image
 
 EXAMPLE_URL = 'http://books.toscrape.com/catalogue/a-light-in-the-attic_1000/index.html' # global var
 
@@ -10,9 +10,6 @@ def get_book_data(EXAMPLE_URL):
     print(response)  # affichage code retour
     if response.ok:  # si justement ok
         soup = BeautifulSoup(response.text, features='html.parser')  # format txt, delete warnings
-        """driver = webdriver.Chrome(ChromeDriverManager().install())
-        driver.get(EXAMPLE_URL)
-        product_page_url = driver.current_url"""
         product_page_url = EXAMPLE_URL #soup.find pour nom classe exacte, soup.select nom classe inexaxte
         universal_product_code = soup.find('th', text='UPC').find_next_sibling('td').text  # colonne suivante, conversion txt
         title = soup.select('div.col-sm-6.product_main > h1')[0].text # unique indice, conversion txt

@@ -1,4 +1,4 @@
-from load_book import *
+from . import load_book
 
 index_url = 'http://books.toscrape.com/catalogue/category/books/sequential-art_5/index.html' # global var
 

@@ -1,4 +1,4 @@
-from category import *
+from . import category
 
 site_url = 'http://books.toscrape.com/index.html' # global var
 
