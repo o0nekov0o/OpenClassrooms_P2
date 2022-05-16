@@ -1,9 +1,5 @@
 import requests
-from bs4 import BeautifulSoup
-import re
 import os
-import csv
-import time
 
 def save_image_file(url_image):
     """

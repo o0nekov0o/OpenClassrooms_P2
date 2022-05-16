@@ -1,4 +1,7 @@
-from . import category
+import requests
+from bs4 import BeautifulSoup
+
+import category
 
 site_url = 'http://books.toscrape.com/index.html' # global var
 
@@ -8,8 +11,9 @@ def save_all_categories(site_url):
     of the entire category (it handles pagination)
     and for each site's category
     """
-    curl = site_url # preserve global var
-    response = requests.get(curl)  # 200 si ok
+    global links # reutilisation apres boucle
+    url = site_url # preserve global var
+    response = requests.get(url)  # 200 si ok
     print(response)  # afficher code retour
     if response.ok:  # si justement ok
         soup = BeautifulSoup(response.text, features='html.parser') # format txt, delete warnings
@@ -18,10 +22,9 @@ def save_all_categories(site_url):
         for n in range(len(links)): # parcourir toute la liste de liens récupérés
             link = links[n]['href'].replace('catalogue', 'http://books.toscrape.com/catalogue') # affecter dans variable
             try:
-                save_one_category(link) # même variable pour appeler fonction
+                category.save_one_category(link) # même variable pour appeler fonction
             except AttributeError: # si description absente
                 continue
-            time.sleep(0.25)
 
 save_all_categories(site_url)
 
