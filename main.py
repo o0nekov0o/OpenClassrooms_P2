@@ -1,9 +1,9 @@
 import requests
 from bs4 import BeautifulSoup
 
-import home
+import category
 
-site_url = 'http://books.toscrape.com/index.html'  # global var
+site_url = 'https://books.toscrape.com/index.html'  # global var
 
 def save_all_categories(site_url):
     """
@@ -22,7 +22,7 @@ def save_all_categories(site_url):
         for n in range(len(links)):  # parcourir toute la liste de liens récupérés
             link = links[n]['href'].replace('catalogue', 'http://books.toscrape.com/catalogue')  # affecter dans variable
             try:
-                home.save_one_category(link)  # même variable pour appeler fonction
+                category.save_one_category(link)  # même variable pour appeler fonction
             except AttributeError:  # si description absente
                 continue
 

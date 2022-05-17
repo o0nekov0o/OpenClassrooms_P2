@@ -23,7 +23,7 @@ def save_one_category(index_url):
                 lien = i.find('a')['href'].replace('../../..', 'http://books.toscrape.com/catalogue')  # recup lien
                 book_data = extract_book.get_book_data(lien)  # appel fonction get_book_data, retour dans book_data
                 load_book.save_book_csv(book_data)  # appel foncion save_book_csv, enregistrer valeurs retournées
-                time.sleep(0.10)  # meilleure lecture dans interpreter, si corrections bugs
+                time.sleep(0.00)  # meilleure lecture dans interpreter, si corrections bugs
             if soup.find('li', {'class': 'next'}):  # si presence bouton suivant
                 base_url = url[:url.rfind('/')]  # sup derniere partie url (initialement index)
                 suffix_url = soup.find('li', {'class': 'next'}).find('a')['href']  # isole lien bouton suivant
