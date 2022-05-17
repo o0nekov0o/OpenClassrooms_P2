@@ -1,10 +1,9 @@
 import requests
 from bs4 import BeautifulSoup
 
-import category
+import home
 
 site_url = 'http://books.toscrape.com/index.html'  # global var
-
 
 def save_all_categories(site_url):
     """
@@ -21,13 +20,11 @@ def save_all_categories(site_url):
         for x in soup.find_all('ul', {'class': 'nav nav-list'}):  # unique classe 'nav nav-list' mais find_all iteration
             links = x.find('ul').find_all('a')  # autre ul, lister tous les lien des iterations
         for n in range(len(links)):  # parcourir toute la liste de liens récupérés
-            link = links[n]['href'].replace('catalogue',
-                                            'http://books.toscrape.com/catalogue')  # affecter dans variable
+            link = links[n]['href'].replace('catalogue', 'http://books.toscrape.com/catalogue')  # affecter dans variable
             try:
-                category.save_one_category(link)  # même variable pour appeler fonction
+                home.save_one_category(link)  # même variable pour appeler fonction
             except AttributeError:  # si description absente
                 continue
-
 
 save_all_categories(site_url)
 
