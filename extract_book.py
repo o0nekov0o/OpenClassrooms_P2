@@ -20,7 +20,10 @@ def get_book_data(EXAMPLE_URL):
         price_excluding_tax = soup.find('th', text='Price (excl. tax)').find_next_sibling('td').text.replace('Â', '')  # comme title, enleve specialchar
         price_including_tax = soup.find('th', text='Price (incl. tax)').find_next_sibling('td').text.replace('Â', '')  # comme title, enleve specialchar
         number_available = soup.find('th', text='Availability').find_next_sibling('td').text  # comme title, conversion txt
-        product_description = soup.find('div', {'id': 'product_description'}).find_next_sibling('p').text  # comme title, balises differentes
+        try:  # anticipation des eventuelles description absentes (erreur deja rencontree)
+            product_description = soup.find('div', {'id': 'product_description'}).find_next_sibling('p').text  # comme title, balises differentes
+        except AttributeError:  # si justement description absente, alors description vide
+            product_description = ''  # oblige de proceder ainsi, car continue skip le code
         category = soup.find('li', {'class': 'active'}).find_previous_sibling('li').find('a').text  # inverse title, balises differentes, recuperation lien
         review_rating = f"{soup.select('p.star-rating')[0]['class'][1]} Star(s) on Five"  # print interpreter, comportement code, liste dans liste
         image_url = soup.select('div.item.active > img')[0]['src'].replace('../..', 'http://books.toscrape.com')  # comme review_rating, liste attribut src

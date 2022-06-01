@@ -21,14 +21,11 @@ def save_all_categories(site_url):
             links = x.find('ul').find_all('a')  # autre ul, lister tous les lien des iterations
         for n in range(len(links)):  # parcourir toute la liste de liens récupérés
             link = links[n]['href'].replace('catalogue', 'http://books.toscrape.com/catalogue')  # affecter dans variable
-            try:
-                category.save_one_category(link)  # même variable pour appeler fonction
-            except AttributeError:  # si description absente
-                continue
+            category.save_one_category(link)  # même variable pour appeler fonction
 
 save_all_categories(site_url)
 
-if __name__ == "main":
+if __name__ == "__main__":
     book_data = get_book_data(EXAMPLE_URL)
     save_book_csv(book_data)
     save_one_category(index_url)
