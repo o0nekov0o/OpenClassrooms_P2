@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>flake8 violations: extract_book.py</title>
+      <meta http-equiv="Content-Type" value="text/html; charset=UTF-8">
+      <link rel="stylesheet" href="styles.css">
+<script>
+function bindHandler(link) {
+   var code = link.getAttribute('data-code');
+   var key = location.pathname + '#' + code;
+
+   var ul = link.parentNode.querySelector('.details');
+   if (sessionStorage[key] != 'open') {
+      ul.style.display = 'none';
+   }
+   link.addEventListener('click', function (event) {
+      if (!ul.style.display || ul.style.display == 'none') {
+         ul.style.display = 'block';
+         sessionStorage[key] = 'open';
+      } else {
+         ul.style.display = 'none';
+         sessionStorage[key] = 'closed';
+      }
+   });
+}
+
+window.addEventListener('DOMContentLoaded', function () {
+   var links = document.querySelectorAll('#index > li > a');
+   for (var i = 0; i < links.length; i++) {
+      bindHandler(links[i]);
+   }
+});
+</script>
+   </head>
+   <body>
+      <div id="masthead" class="sev-2"></div>
+      <div id="page">
+         <p id="srclink">
+            <a title="View full annotated source"
+               href="extract_book.source.html">
+               <img src="file.svg" alt="&#x2261;">
+            </a></p>
+         <h1>
+            <a href="index.html">
+               <img src="back.svg" alt="&#x2B05;">
+               extract_book.py
+            </a>
+         </h1>
+
+         <ul id="index">
+         
+         <li>
+            <a data-code="E501">
+               <span class="count sev-2">
+                  21
+               </span>
+               <strong>E501:</strong> line too long (102 > 79 characters)
+               
+                  (and 15 similar)
+               
+            </a>
+            <ul class="details">
+            <li>
+               
+               <p>Line too long (102 > 79 characters):</p>
+               
+               <a href="extract_book.source.html#l6">
+                  <tt><i>6</i> <span class="n">EXAMPLE_URL</span> <span class="o">=</span> <span class="s1">&#39;http://books.toscrape.com/catalogue/a-light-in-the-attic_1000/index.html&#39;</span>  <span class="c1"># global var</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (98 > 79 characters):</p>
+               
+               <a href="extract_book.source.html#l16">
+                  <tt><i>16</i>         <span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">,</span> <span class="n">features</span><span class="o">=</span><span class="s1">&#39;html.parser&#39;</span><span class="p">)</span>  <span class="c1"># format txt, delete warnings</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (99 > 79 characters):</p>
+               
+               <a href="extract_book.source.html#l17">
+                  <tt><i>17</i>         <span class="n">product_page_url</span> <span class="o">=</span> <span class="n">url</span>  <span class="c1"># soup.find pour nom classe exacte, soup.select nom classe inexacte</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (125 > 79 characters):</p>
+               
+               <a href="extract_book.source.html#l18">
+                  <tt><i>18</i>         <span class="n">universal_product_code</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;th&#39;</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s1">&#39;UPC&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">find_next_sibling</span><span class="p">(</span><span class="s1">&#39;td&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">text</span>  <span class="c1"># colonne suivante, conversion txt</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (102 > 79 characters):</p>
+               
+               <a href="extract_book.source.html#l19">
+                  <tt><i>19</i>         <span class="n">title</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s1">&#39;div.col-sm-6.product_main &gt; h1&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">text</span>  <span class="c1"># unique indice, conversion txt</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (152 > 79 characters):</p>
+               
+               <a href="extract_book.source.html#l20">
+                  <tt><i>20</i>         <span class="n">price_excluding_tax</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;th&#39;</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s1">&#39;Price (excl. tax)&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">find_next_sibling</span><span class="p">(</span><span class="s1">&#39;td&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;Â&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>  <span class="c1"># comme title, enleve specialchar</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (152 > 79 characters):</p>
+               
+               <a href="extract_book.source.html#l21">
+                  <tt><i>21</i>         <span class="n">price_including_tax</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;th&#39;</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s1">&#39;Price (incl. tax)&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">find_next_sibling</span><span class="p">(</span><span class="s1">&#39;td&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;Â&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>  <span class="c1"># comme title, enleve specialchar</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (123 > 79 characters):</p>
+               
+               <a href="extract_book.source.html#l22">
+                  <tt><i>22</i>         <span class="n">number_available</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;th&#39;</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s1">&#39;Availability&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">find_next_sibling</span><span class="p">(</span><span class="s1">&#39;td&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">text</span>  <span class="c1"># comme title, conversion txt</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (90 > 79 characters):</p>
+               
+               <a href="extract_book.source.html#l23">
+                  <tt><i>23</i>         <span class="k">try</span><span class="p">:</span>  <span class="c1"># anticipation des eventuelles description absentes (erreur deja rencontree)</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (145 > 79 characters):</p>
+               
+               <a href="extract_book.source.html#l24">
+                  <tt><i>24</i>             <span class="n">product_description</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;div&#39;</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;id&#39;</span><span class="p">:</span> <span class="s1">&#39;product_description&#39;</span><span class="p">})</span><span class="o">.</span><span class="n">find_next_sibling</span><span class="p">(</span><span class="s1">&#39;p&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">text</span>  <span class="c1"># comme title, balises differentes</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (90 > 79 characters):</p>
+               
+               <a href="extract_book.source.html#l25">
+                  <tt><i>25</i>         <span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>  <span class="c1"># si justement description absente, alors description vide</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (91 > 79 characters):</p>
+               
+               <a href="extract_book.source.html#l26">
+                  <tt><i>26</i>             <span class="n">product_description</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>  <span class="c1"># oblige de proceder ainsi, car continue skip le code</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (155 > 79 characters):</p>
+               
+               <a href="extract_book.source.html#l27">
+                  <tt><i>27</i>         <span class="n">category</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;li&#39;</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;class&#39;</span><span class="p">:</span> <span class="s1">&#39;active&#39;</span><span class="p">})</span><span class="o">.</span><span class="n">find_previous_sibling</span><span class="p">(</span><span class="s1">&#39;li&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">text</span>  <span class="c1"># inverse title, balises differentes, recuperation lien</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (146 > 79 characters):</p>
+               
+               <a href="extract_book.source.html#l28">
+                  <tt><i>28</i>         <span class="n">review_rating</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">soup</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s1">&#39;p.star-rating&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;class&#39;</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2"> Star(s) on Five&quot;</span>  <span class="c1"># print interpreter, comportement code, liste dans liste</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (155 > 79 characters):</p>
+               
+               <a href="extract_book.source.html#l29">
+                  <tt><i>29</i>         <span class="n">image_url</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s1">&#39;div.item.active &gt; img&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;src&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;../..&#39;</span><span class="p">,</span> <span class="s1">&#39;http://books.toscrape.com&#39;</span><span class="p">)</span>  <span class="c1"># comme review_rating, liste attribut src</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (102 > 79 characters):</p>
+               
+               <a href="extract_book.source.html#l30">
+                  <tt><i>30</i>         <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Product Page URL : </span><span class="si">{</span><span class="n">product_page_url</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>  <span class="c1"># fprint on evite, + et \n, code plus lisible</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (81 > 79 characters):</p>
+               
+               <a href="extract_book.source.html#l41">
+                  <tt><i>41</i>         <span class="n">save_image</span><span class="o">.</span><span class="n">save_image_file</span><span class="p">(</span><span class="n">image_url</span><span class="p">)</span>  <span class="c1"># appel fonction, sauvegarde image</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (100 > 79 characters):</p>
+               
+               <a href="extract_book.source.html#l42">
+                  <tt><i>42</i>         <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;Product Page URL&#39;</span><span class="p">:</span> <span class="n">product_page_url</span><span class="p">,</span> <span class="s1">&#39;UPC&#39;</span><span class="p">:</span> <span class="n">universal_product_code</span><span class="p">,</span> <span class="s1">&#39;Title&#39;</span><span class="p">:</span> <span class="n">title</span><span class="p">,</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (103 > 79 characters):</p>
+               
+               <a href="extract_book.source.html#l44">
+                  <tt><i>44</i>                 <span class="s1">&#39;Price Excluding Tax&#39;</span><span class="p">:</span> <span class="n">price_excluding_tax</span><span class="p">,</span> <span class="s1">&#39;Price Including Tax&#39;</span><span class="p">:</span> <span class="n">price_including_tax</span><span class="p">,</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (97 > 79 characters):</p>
+               
+               <a href="extract_book.source.html#l46">
+                  <tt><i>46</i>                 <span class="s1">&#39;Number Available&#39;</span><span class="p">:</span> <span class="n">number_available</span><span class="p">,</span> <span class="s1">&#39;Product Description&#39;</span><span class="p">:</span> <span class="n">product_description</span><span class="p">,</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (93 > 79 characters):</p>
+               
+               <a href="extract_book.source.html#l47">
+                  <tt><i>47</i>                 <span class="s1">&#39;Category&#39;</span><span class="p">:</span> <span class="n">category</span><span class="p">,</span> <span class="s1">&#39;Review Rating&#39;</span><span class="p">:</span> <span class="n">review_rating</span><span class="p">,</span> <span class="s1">&#39;Image URL&#39;</span><span class="p">:</span> <span class="n">image_url</span><span class="p">}</span></tt>
+               </a>
+            </li>
+            </ul>
+         </li>
+         
+         <li>
+            <a data-code="E302">
+               <span class="count sev-2">
+                  1
+               </span>
+               <strong>E302:</strong> expected 2 blank lines, found 1
+               
+            </a>
+            <ul class="details">
+            <li>
+               
+               <a href="extract_book.source.html#l8">
+                  <tt><i>8</i> <span class="k">def</span> <span class="nf">get_book_data</span><span class="p">(</span><span class="n">EXAMPLE_URL</span><span class="p">):</span></tt>
+               </a>
+            </li>
+            </ul>
+         </li>
+         
+         <li>
+            <a data-code="W292">
+               <span class="count sev-2">
+                  1
+               </span>
+               <strong>W292:</strong> no newline at end of file
+               
+            </a>
+            <ul class="details">
+            <li>
+               
+               <a href="extract_book.source.html#l47">
+                  <tt><i>47</i>                 <span class="s1">&#39;Category&#39;</span><span class="p">:</span> <span class="n">category</span><span class="p">,</span> <span class="s1">&#39;Review Rating&#39;</span><span class="p">:</span> <span class="n">review_rating</span><span class="p">,</span> <span class="s1">&#39;Image URL&#39;</span><span class="p">:</span> <span class="n">image_url</span><span class="p">}</span></tt>
+               </a>
+            </li>
+            </ul>
+         </li>
+         
+         </ul>
+      </div>
+   </body>
+</html>

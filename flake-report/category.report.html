@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>flake8 violations: category.py</title>
+      <meta http-equiv="Content-Type" value="text/html; charset=UTF-8">
+      <link rel="stylesheet" href="styles.css">
+<script>
+function bindHandler(link) {
+   var code = link.getAttribute('data-code');
+   var key = location.pathname + '#' + code;
+
+   var ul = link.parentNode.querySelector('.details');
+   if (sessionStorage[key] != 'open') {
+      ul.style.display = 'none';
+   }
+   link.addEventListener('click', function (event) {
+      if (!ul.style.display || ul.style.display == 'none') {
+         ul.style.display = 'block';
+         sessionStorage[key] = 'open';
+      } else {
+         ul.style.display = 'none';
+         sessionStorage[key] = 'closed';
+      }
+   });
+}
+
+window.addEventListener('DOMContentLoaded', function () {
+   var links = document.querySelectorAll('#index > li > a');
+   for (var i = 0; i < links.length; i++) {
+      bindHandler(links[i]);
+   }
+});
+</script>
+   </head>
+   <body>
+      <div id="masthead" class="sev-2"></div>
+      <div id="page">
+         <p id="srclink">
+            <a title="View full annotated source"
+               href="category.source.html">
+               <img src="file.svg" alt="&#x2261;">
+            </a></p>
+         <h1>
+            <a href="index.html">
+               <img src="back.svg" alt="&#x2B05;">
+               category.py
+            </a>
+         </h1>
+
+         <ul id="index">
+         
+         <li>
+            <a data-code="E501">
+               <span class="count sev-2">
+                  12
+               </span>
+               <strong>E501:</strong> line too long (106 > 79 characters)
+               
+                  (and 10 similar)
+               
+            </a>
+            <ul class="details">
+            <li>
+               
+               <p>Line too long (106 > 79 characters):</p>
+               
+               <a href="category.source.html#l8">
+                  <tt><i>8</i> <span class="n">index_url</span> <span class="o">=</span> <span class="s1">&#39;http://books.toscrape.com/catalogue/category/books/sequential-art_5/index.html&#39;</span>  <span class="c1"># global var</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (102 > 79 characters):</p>
+               
+               <a href="category.source.html#l21">
+                  <tt><i>21</i>             <span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">,</span> <span class="n">features</span><span class="o">=</span><span class="s1">&#39;html.parser&#39;</span><span class="p">)</span>  <span class="c1"># format txt, delete warnings</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (109 > 79 characters):</p>
+               
+               <a href="category.source.html#l22">
+                  <tt><i>22</i>             <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">soup</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s1">&#39;div&#39;</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;class&#39;</span><span class="p">:</span> <span class="s1">&#39;image_container&#39;</span><span class="p">}):</span>  <span class="c1"># plusieurs classes image_container</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (115 > 79 characters):</p>
+               
+               <a href="category.source.html#l23">
+                  <tt><i>23</i>                 <span class="n">lien</span> <span class="o">=</span> <span class="n">i</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">)[</span><span class="s1">&#39;href&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;../../..&#39;</span><span class="p">,</span> <span class="s1">&#39;http://books.toscrape.com/catalogue&#39;</span><span class="p">)</span>  <span class="c1"># recup lien</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (115 > 79 characters):</p>
+               
+               <a href="category.source.html#l24">
+                  <tt><i>24</i>                 <span class="n">book_data</span> <span class="o">=</span> <span class="n">extract_book</span><span class="o">.</span><span class="n">get_book_data</span><span class="p">(</span><span class="n">lien</span><span class="p">)</span>  <span class="c1"># appel fonction get_book_data, retour dans book_data</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (113 > 79 characters):</p>
+               
+               <a href="category.source.html#l25">
+                  <tt><i>25</i>                 <span class="n">load_book</span><span class="o">.</span><span class="n">save_book_csv</span><span class="p">(</span><span class="n">book_data</span><span class="p">)</span>  <span class="c1"># appel foncion save_book_csv, enregistrer valeurs retournées</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (91 > 79 characters):</p>
+               
+               <a href="category.source.html#l26">
+                  <tt><i>26</i>                 <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.00</span><span class="p">)</span>  <span class="c1"># meilleure lecture dans interpreter, si corrections bugs</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (80 > 79 characters):</p>
+               
+               <a href="category.source.html#l27">
+                  <tt><i>27</i>             <span class="k">if</span> <span class="n">soup</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;li&#39;</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;class&#39;</span><span class="p">:</span> <span class="s1">&#39;next&#39;</span><span class="p">}):</span>  <span class="c1"># si presence bouton suivant</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (95 > 79 characters):</p>
+               
+               <a href="category.source.html#l28">
+                  <tt><i>28</i>                 <span class="n">base_url</span> <span class="o">=</span> <span class="n">url</span><span class="p">[:</span><span class="n">url</span><span class="o">.</span><span class="n">rfind</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">)]</span>  <span class="c1"># sup derniere partie url (initialement index)</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (110 > 79 characters):</p>
+               
+               <a href="category.source.html#l29">
+                  <tt><i>29</i>                 <span class="n">suffix_url</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;li&#39;</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;class&#39;</span><span class="p">:</span> <span class="s1">&#39;next&#39;</span><span class="p">})</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">)[</span><span class="s1">&#39;href&#39;</span><span class="p">]</span>  <span class="c1"># isole lien bouton suivant</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (86 > 79 characters):</p>
+               
+               <a href="category.source.html#l30">
+                  <tt><i>30</i>                 <span class="n">url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">base_url</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">suffix_url</span><span class="si">}</span><span class="s2">&quot;</span>  <span class="c1"># ajout lien bouton suivant au reste</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (104 > 79 characters):</p>
+               
+               <a href="category.source.html#l31">
+                  <tt><i>31</i>                 <span class="c1"># url = f&quot;{url[:url.rfind(&#39;/&#39;)]}/{soup.find(&#39;li&#39;, {&#39;class&#39;: &#39;next&#39;}).find(&#39;a&#39;)[&#39;href&#39;]}&quot;</span></tt>
+               </a>
+            </li>
+            </ul>
+         </li>
+         
+         <li>
+            <a data-code="E302">
+               <span class="count sev-2">
+                  1
+               </span>
+               <strong>E302:</strong> expected 2 blank lines, found 1
+               
+            </a>
+            <ul class="details">
+            <li>
+               
+               <a href="category.source.html#l10">
+                  <tt><i>10</i> <span class="k">def</span> <span class="nf">save_one_category</span><span class="p">(</span><span class="n">index_url</span><span class="p">):</span></tt>
+               </a>
+            </li>
+            </ul>
+         </li>
+         
+         <li>
+            <a data-code="W292">
+               <span class="count sev-2">
+                  1
+               </span>
+               <strong>W292:</strong> no newline at end of file
+               
+            </a>
+            <ul class="details">
+            <li>
+               
+               <a href="category.source.html#l34">
+                  <tt><i>34</i>                 <span class="n">suivant</span> <span class="o">=</span> <span class="mi">0</span>  <span class="c1"># sortir de la boucle (car bouton suivant absent)</span></tt>
+               </a>
+            </li>
+            </ul>
+         </li>
+         
+         </ul>
+      </div>
+   </body>
+</html>
