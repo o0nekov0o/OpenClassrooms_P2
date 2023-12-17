@@ -9,7 +9,7 @@ Ci-après le détail des éléments présents dans ce répertoire :
 - création automatique, après exécution, des sous-répertoires "scraping_csv" et "scraping_img" pour stocker les données
 (un fichier excel correspondant à chaque catégorie, ainsi que toutes les images, de chacun des produits présents sur site)
 
-#### Voici ci-dessous une aide pour procéder aux étapes d'installation
+## Voici ci-dessous une aide pour procéder aux étapes d'installation
 A l'aide de votre invite de commandes, placez-vous à la racine du répertoire téléchargé.
 Lancez-y ensuite la commande suivante afin de créer votre environnement virtuel :
 ```bash
