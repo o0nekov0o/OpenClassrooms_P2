@@ -7,7 +7,7 @@ Ci-après le détail des éléments présents dans ce répertoire :
 - procéder à l'utilisation en exécutant les fichiers home.py ou main.py au choix (récupération données livres)
 (au préalable installer les paquets nécessaires ainsi que leurs dépendances à l'aide du fichier requirements)
 - création automatique, après exécution, des sous-répertoires "scraping_csv" et "scraping_img" pour stocker les données
-(un fichier excel correspondant à chaque catégorie, ainsi que toutes les images, de chacun des produits présents sur site)
+(un fichier excel pour chaque catégorie, ainsi que toutes les images, de chacun des produits présents sur site)
 
 ## Voici ci-dessous une aide pour procéder aux étapes d'installation
 A l'aide de votre invite de commandes, placez-vous à la racine du répertoire téléchargé.
